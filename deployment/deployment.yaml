@@ -34,13 +34,13 @@ spec:
             - name: token
               value: ""
             - name: cpu
-              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1.tcs.turkcell.tgc/api/v1/query?query=instance:node_cpu_utilisation:rate1m"
+              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1/api/v1/query?query=instance:node_cpu_utilisation:rate1m"
             - name: memory
-              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1.tcs.turkcell.tgc/api/v1/query?query=instance:node_memory_utilisation:ratio"
+              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1/api/v1/query?query=instance:node_memory_utilisation:ratio"
             - name: network
-              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1.tcs.turkcell.tgc/api/v1/query?query=instance:node_network_receive_bytes_excluding_lo:rate1m"
+              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1/api/v1/query?query=instance:node_network_receive_bytes_excluding_lo:rate1m"
             - name: disk
-              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1.tcs.turkcell.tgc/api/v1/query?query=node_disk_io_time_seconds_total"
+              value: "https://prometheus-k8s-openshift-monitoring.apps.Cluster1/api/v1/query?query=node_disk_io_time_seconds_total"
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
