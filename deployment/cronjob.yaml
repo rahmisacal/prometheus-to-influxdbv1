@@ -1,0 +1,25 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: deploy-restart
+spec:
+  concurrencyPolicy: Forbid
+  schedule:  "*/2 * * * *" #the job runs every 2 minutes
+  jobTemplate:
+    spec:
+      backoffLimit: 6
+      activeDeadlineSeconds: 1800
+      template:
+        spec:
+          metadata:
+            labels:
+              parent: "cronjobdeploy-restart"
+          restartPolicy: Never
+          containers:
+            - name: deploy-restart
+              image: quay.io/openshift-release-dev/ocp-v4.0-art-dev@sha256:e4bb46d776c7916ea5301f5ae5b29f53ecfaffeff0fd197dcc27302ee691f994
+              command:
+                - 'oc'
+                - 'rollout'
+                - 'restart'
+                - 'deployment/promtoinflux'

@@ -1,0 +1,6 @@
+influxdb:
+  Url: "10.167.36.22"
+  Port: 8086
+  Measurement: "clusters"
+  Database: "openshift"
+  RetentionPolicy: "autogen"
