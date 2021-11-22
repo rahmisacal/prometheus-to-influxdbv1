@@ -1,6 +1,6 @@
 influxdb:
-  Url: "10.167.36.22"
-  Port: 8086
+  Url: "xxxx"
+  Port: xx
   Measurement: "clusters"
   Database: "openshift"
   RetentionPolicy: "autogen"
